@@ -1,11 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Loading animation
-    const loading = document.createElement('div');
-    loading.className = 'loading';
-    loading.innerHTML = '<div class="loading-spinner"></div>';
-    document.body.appendChild(loading);
-
+    const loading = document.querySelector('.loading');
     window.addEventListener('load', () => {
         loading.style.opacity = '0';
         setTimeout(() => loading.remove(), 500);
@@ -49,23 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('aos-animate');
             }
         });
     }, {
         threshold: 0.1
     });
 
-    // Observe all sections and cards for animation
-    document.querySelectorAll('section, .service-card, .feature-item').forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    // Observe elements with data-aos attribute
+    document.querySelectorAll('[data-aos]').forEach(element => {
         observer.observe(element);
     });
 
-    // Add scroll-based navbar background
+    // Dynamic navbar background
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         window.addEventListener('scroll', () => {
@@ -79,23 +71,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Dynamic counters for statistics
+    // Animated counters
     const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+
+    const updateCount = (counter, target) => {
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(() => updateCount(counter, target), 1);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
     counters.forEach(counter => {
         const target = +counter.getAttribute('data-target');
-        const increment = target / 100;
-        
-        const updateCounter = () => {
-            const value = +counter.innerText;
-            if (value < target) {
-                counter.innerText = Math.ceil(value + increment);
-                setTimeout(updateCounter, 10);
-            } else {
-                counter.innerText = target;
+        updateCount(counter, target);
+    });
+
+    // Reveal animations on scroll
+    const revealSection = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
             }
-        };
-        
-        updateCounter();
+        });
+    };
+
+    const sectionObserver = new IntersectionObserver(revealSection, {
+        root: null,
+        threshold: 0.15,
+    });
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('section-hidden');
+        sectionObserver.observe(section);
     });
 });
-
