@@ -1,30 +1,117 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlexNodes - VPS, Game Server & Bot Hosting</title>
-    <meta name="description" content="FlexNodes offers high-performance VPS, game servers, bot hosting, website hosting and more. Free tier available. Frankfurt location." />
-    <meta name="author" content="FlexNodes" />
+    <meta name="description" content="FlexNodes offers high-performance VPS, game servers, bot hosting, website hosting and more. Free tier available. Frankfurt location.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">FlexNodes</div>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#features">Features</a>
+                <a href="#location">Location</a>
+                <a href="https://vm.flexnodes.uk" target="_blank">VPS Panel</a>
+                <a href="https://backend.flexnodes.uk" target="_blank">Game Panel</a>
+                <a href="https://discord.gg/sEmKR8UJNz" target="_blank" class="discord-link">Discord</a>
+            </div>
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-    <meta property="og:title" content="FlexNodes - VPS, Game Server & Bot Hosting" />
-    <meta property="og:description" content="FlexNodes offers high-performance VPS, game servers, bot hosting, website hosting and more. Free tier available." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="gradient-text">High Performance Hosting Solutions</h1>
+            <p class="hero-subtitle">Experience premium VPS, game server, and bot hosting with our free tier available.</p>
+            <div class="hero-buttons">
+                <a href="https://vm.flexnodes.uk" class="btn-primary">Get Started</a>
+                <a href="https://discord.gg/sEmKR8UJNz" class="btn-secondary">Join Discord</a>
+            </div>
+        </div>
+    </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@flexnodes" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-  </head>
+    <section id="services" class="services section-padding">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>VPS Hosting</h3>
+                <p>High-performance virtual private servers with full root access.</p>
+            </div>
+            <div class="service-card">
+                <h3>Game Servers</h3>
+                <p>Low-latency game hosting with easy management panel.</p>
+            </div>
+            <div class="service-card">
+                <h3>Bot Hosting</h3>
+                <p>Reliable Discord bot hosting with 24/7 uptime.</p>
+            </div>
+            <div class="service-card">
+                <h3>Web Hosting</h3>
+                <p>Fast and secure website hosting solutions.</p>
+            </div>
+        </div>
+    </section>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <section id="features" class="features section-padding">
+        <h2>Why Choose Us</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Free Tier Available</h3>
+                <p>Start with our free tier and upgrade as you grow.</p>
+            </div>
+            <div class="feature-item">
+                <h3>24/7 Support</h3>
+                <p>Get help anytime through our Discord community.</p>
+            </div>
+            <div class="feature-item">
+                <h3>High Performance</h3>
+                <p>Powered by latest generation hardware.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Easy Management</h3>
+                <p>User-friendly control panels for all services.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="location section-padding">
+        <h2>Our Location</h2>
+        <div class="location-content">
+            <div class="location-info">
+                <h3>Frankfurt, Germany</h3>
+                <p>Centrally located data center providing low latency across Europe.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FlexNodes</h3>
+                <p>Premium hosting solutions at affordable prices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="https://vm.flexnodes.uk">VPS Panel</a>
+                <a href="https://backend.flexnodes.uk">Game Panel</a>
+                <a href="https://discord.gg/sEmKR8UJNz">Discord</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FlexNodes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
